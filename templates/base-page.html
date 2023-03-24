@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Hyperxstore{% endblock title%}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+  <div class="max-min-w">
+    <nav class="nav-blok1">
+      <div class="blok-nav-display">
+        <ul class="blok-nav-display font-size-nav-2 text-d">
+          <li><a class="font-size-nav-2 text-d" href="#" alt="#">Наши контакты:</a></li>
+          <li><a class="font-size-nav-2 text-d" href="#" alt="#">87014141414</a></li>
+        </ul>
+        <ul class="blok-nav-display font-size-nav-2 text-d">
+          <li><a class="font-size-nav-2 text-d" href="#" alt="#">email:</a></li>
+          <li><a class="font-size-nav-2 text-d" href="#" alt="#">sales@hyperxstore.kz</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header class="header-nav">
+      <div class="for-div-head">
+        <div ><img class="img" src="{% static 'img/logo.png'%}" alt="HyperX"></div>
+      </div>
+      <ul class="box-navbar text-d">
+        <li class=""><a class="text-d font-size-nav a-color" href="/" alt="#">Главная</a></li>
+        <li><a class="text-d font-size-nav a-color" href="#" alt="#">О нас</a></li>
+        <li class=""><a class="text-d font-size-nav a-color" href="#" alt="#">Развитие</a></li>
+        <li><a class="text-d font-size-nav a-color" href="shop/" alt="#">Распродажа</a></li>
+      </ul>
+      <form class="for-form-nav ">
+        <input class="form-input" type="Поиск" placeholder="Поиск" aria-label="Поиск">
+        <button class="button-nav" type="submit">Поиск</button>
+      </form>
+    </header>
+      {% block container %}
+      {% endblock container %}
+
+
+
+    <footer class="footer-bg-color ">
+      <div class="div-footer">
+            <table class="footer-table">
+                <thead>
+                    <tbody>
+                        <tr>
+                            <th class="footer-link">Мы работаем с 10:00 до 18:00</th>
+                        </tr>
+                        <tr>
+                            <th class="footer-link">Наш номер:87014141414</th>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+            <div class="footer-tabel"><img class="footer-img" src="{% static 'img/logo.png'%}" alt="#"></div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
