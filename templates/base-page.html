@@ -28,9 +28,9 @@
       </div>
       <ul class="box-navbar text-d">
         <li class=""><a class="text-d font-size-nav a-color" href="/" alt="#">Главная</a></li>
-        <li><a class="text-d font-size-nav a-color" href="#" alt="#">О нас</a></li>
+        <li><a class="text-d font-size-nav a-color" href="{% url 'shop' %}" alt="#">Каталог</a></li>
         <li class=""><a class="text-d font-size-nav a-color" href="#" alt="#">Развитие</a></li>
-        <li><a class="text-d font-size-nav a-color" href="shop/" alt="#">Распродажа</a></li>
+        <li><a class="text-d font-size-nav a-color" href="{% url 'shop' %}" alt="#">Распродажа</a></li>
       </ul>
       <form class="for-form-nav ">
         <input class="form-input" type="Поиск" placeholder="Поиск" aria-label="Поиск">
@@ -62,3 +62,5 @@
   </div>
 </body>
 </html>
+
+

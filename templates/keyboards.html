@@ -4,21 +4,23 @@
     Hyperxstore
 {% endblock title%}
 {% block container %}
-<div class="str2-border"><h1>HyperX</h1></div>
+<div class="str2-border"><h1>Клавиатуры</h1></div>
     <div class="section">
 {% include 'categories.html' %}
 {% block content %}
 {% endblock content %}
-            <div class="str2-cent-block-margin">
+        <div class="str2-cent-block-margin">
             <div class="str2-block-flex">
         {% for post in pr %}
             {% if post.availability %}
+                {% if post.group == 'keyboards' %}
                     <div class="">
                         <div class="str2-box-blok2">
                             <img class="blok2-img" src="{{ post.img.url }}" alt="garnit">
                             <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="#" alt="Техника">{{ post.name }}</a></h3></div>
                         </div>
                     </div>
+                {% endif %}
                 {% endif %}
                 {% endfor %}
                         </div>

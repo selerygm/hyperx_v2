@@ -1,0 +1,35 @@
+{% extends 'base-page.html' %}
+{% load static %}
+{% block title %}
+    Hyperxstore
+{% endblock title%}
+{% block container %}
+        <div>
+          <div class="header-nav ">
+
+            <div class="str2-blok2 card-width-l-r">
+              <div><img class="card-img-left" src="{{img.url }}" alt=""></div>
+              <div><img class="card-img-left" src="{{img.url }}" alt=""></div>
+              <div><img class="card-img-left" src="{{img.url }}" alt=""></div>
+              <div><img class="card-img-left" src="{{img.url }}" alt=""></div>
+            </div>
+
+            <div><img class="card-img-center" src="{{ img.url }}" alt="headphones"></div>
+
+            <div class="card-width-l-r str2-blok2">
+              <div><h1><b>{{ name }}</b></h1></div>
+              <div>
+                <ul>
+                  <li class="card-fontsize">{{description}}</li>
+                  <li class="card-fontsize">{{discsecond}}</li>
+                  <li class="card-fontsize">{{discthirs}}</li>
+                  <li class="card-fontsize">Цена {{price}}</li>
+                </ul>
+              </div>
+              <div>
+                <button class="card-button" type="button">Где купить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock container %}
