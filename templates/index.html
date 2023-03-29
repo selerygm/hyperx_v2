@@ -1,53 +1,90 @@
 {% extends 'base-page.html' %}
 {% load static %}
-{% block title %}
-    Hyperxstore
-{% endblock title%}
+{% block title %} Hyperxstore {% endblock title%}
 {% block container %}
+
+<! -- БАННЕР -->
 <div class="container">
-      <img class="max-min-w" src="{% static 'img/imgHyperX.jpg'%}" alt="HyperX">
+    <img class="max-min-w" src="{% static 'img/imgHyperX.jpg'%}" alt="HyperX">
+</div>
+
+<! -- КАТЕГОРИИ ТОВАРОВ -->
+<div class="content-blok2-s">
+    <div class="section-1">
+        <h2 class="section-h2">Категории товаров</h2>
     </div>
 
-    <div class="content-blok2-s">
-      <div class="section-1"><h2 class="section-h2">Популярные товары</h2></div>
-
-      <div class="section">
-        <div class="box">
-          <img class="box-img" src="{% static 'img/nav1.webp'%}" alt="garnit">
-          <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="{% url 'headphones' %}" alt="Техника">Наушники <img class="card-img" src="./info/images/2223606.png " alt=""></a></h3></div>
-        </div>
-        <div class="box">
-          <img class="box-img" src="{% static 'img/nav5.webp'%}" alt="garnit">
-          <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="{% url 'mouse' %}" alt="Техника">Мышки <img class="card-img" src="./info/images/2223606.png " alt=""></a></h3></div>
-        </div>
-        <div class="box">
-          <img class="box-img" src="{% static 'img/nav3.webp'%}" alt="garnit">
-          <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="{% url 'microphones' %}" alt="Техника">Микрофоны <img class="card-img" src="./info/images/2223606.png " alt=""></a></h3></div>
-        </div>
-        <div class="box">
-          <img class="box-img" src="{% static 'img/nav2.webp'%}" alt="garnit">
-          <div class="mar-box"><h3><a class="text-d font-size-nav a-color" href="{% url 'keyboards' %}" alt="Техника">Клавиатуры <img class="card-img" src="./info/images/2223606.png " alt=""></a></h3></div>
-        </div>
-        <div class="box">
-          <img class="box-img" src="{% static 'img/nav4.webp'%}" alt="garnit">
-          <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="{% url 'monitors' %}" alt="Техника">Мониторы <img class="card-img" src="./info/images/2223606.png " alt=""></a></h3></div>
-        </div>
-      </div>
-      <div class="section2">
-        <div><h2>Товары в продаже!</h2></div>
-      </div>
-    </div>
-
-<div class="">
     <div class="section">
-        {% for post in pr %}
+        <div  class="box headphones">
+            <a class="text-d" href="{% url 'headphones' %}">
+                <img class="box-img" src="{% static 'img/nav1.webp'%}" alt="headphones">
+                <div>
+                    <h3 class="box-h3-blok3 font-size-nav a-color">Наушники</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="box mouse">
+            <a class="text-d" href="{% url 'mouse' %}" >
+                <img class="box-img" src="{% static 'img/nav5.webp'%}" alt="mouse">
+                <div>
+                    <h3 class="box-h3-blok3 font-size-nav a-color">Мышки</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="box microphones">
+            <a class="text-d" href="{% url 'microphones' %}" >
+                <img class="box-img" src="{% static 'img/nav3.webp'%}" alt="microphones">
+                <div>
+                    <h3 class="box-h3-blok3 font-size-nav a-color">Микрофоны</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="box keyboards">
+            <a class="text-d" href="{% url 'keyboards' %}" >
+                <img class="box-img" src="{% static 'img/nav2.webp'%}" alt="keyboards">
+                <div>
+                    <h3 class="box-h3-blok3 font-size-nav a-color">Клавиатуры</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="box monitors">
+            <a class="text-d" href="{% url 'monitors' %}" >
+                <img class="box-img" src="{% static 'img/nav4.webp'%}" alt="monitors">
+                <div>
+                    <h3 class="box-h3-blok3 font-size-nav a-color">Мониторы</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<! -- ПОПУЛЯРНЫЕ ТОВАРЫ -->
+<div>
+    <div class="section2">
+        <div>
+            <h2>Популярные товары!</h2>
+        </div>
+    </div>
+    <div>
+        <div class="section">
+            {% for post in pr %}
             {% if post.availability %}
                 <div class="box-blok2">
                     <img class="blok2-img" src="{{ post.img.url }}" alt="garnit">
-                    <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="{{ post.get_absolute_url }}" alt="Техника">{{ post.name }}</a></h3></div>
+                    <div>
+                        <h3 class="box-h3-blok3">
+                            <a class="text-d font-size-nav a-color" href="{{ post.get_absolute_url }}" alt="Техника">{{ post.name }}
+                            </a>
+                        </h3>
+                    </div>
                 </div>
             {% endif %}
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 

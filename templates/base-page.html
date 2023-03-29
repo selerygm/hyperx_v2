@@ -5,61 +5,67 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Hyperxstore{% endblock title%}</title>
+  <title>{% block title %}{% endblock title%}</title>
   <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
-  <div class="max-min-w">
-    <nav class="nav-blok1">
-      <div class="blok-nav-display">
-        <ul class="blok-nav-display font-size-nav-2 text-d">
-          <li><a class="font-size-nav-2 text-d" href="#" alt="#">Наши контакты:</a></li>
-          <li><a class="font-size-nav-2 text-d" href="#" alt="#">87014141414</a></li>
-        </ul>
-        <ul class="blok-nav-display font-size-nav-2 text-d">
-          <li><a class="font-size-nav-2 text-d" href="#" alt="#">email:</a></li>
-          <li><a class="font-size-nav-2 text-d" href="#" alt="#">sales@hyperxstore.kz</a></li>
-        </ul>
-      </div>
-    </nav>
-    <header class="header-nav">
-      <div class="for-div-head">
-        <div ><img class="img" src="{% static 'img/logo.png'%}" alt="HyperX"></div>
-      </div>
-      <ul class="box-navbar text-d">
-        <li class=""><a class="text-d font-size-nav a-color" href="/" alt="#">Главная</a></li>
-        <li><a class="text-d font-size-nav a-color" href="{% url 'shop' %}" alt="#">Каталог</a></li>
-        <li class=""><a class="text-d font-size-nav a-color" href="#" alt="#">Развитие</a></li>
-        <li><a class="text-d font-size-nav a-color" href="{% url 'shop' %}" alt="#">Распродажа</a></li>
-      </ul>
-      <form class="for-form-nav ">
-        <input class="form-input" type="Поиск" placeholder="Поиск" aria-label="Поиск">
-        <button class="button-nav" type="submit">Поиск</button>
-      </form>
-    </header>
-      {% block container %}
-      {% endblock container %}
+<! -- BODY -->
+    <div class="max-min-w">
+<! -- КОНТАКТЫ -->
+        <nav class="nav-blok1">
+            <div class="blok-nav-display">
+                <ul class="blok-nav-display font-size-nav-2 text-d">
+                    <li><a class="font-size-nav-2 text-d" href="#" alt="#">Наши контакты: </a></li>
+                    <li><a class="font-size-nav-2 text-d" href="tel:87014141414" alt="87014141414">87014141414</a></li>
+                </ul>
+                <ul class="blok-nav-display font-size-nav-2 text-d">
+                    <li><a class="font-size-nav-2 text-d" href="#" alt="email">Email:</a></li>
+                    <li><a class="font-size-nav-2 text-d" href="mailto:sales@hyperxstore.kz" alt="hyperxstoreemail">sales@hyperxstore.kz</a></li>
+                </ul>
+            </div>
+        </nav>
+<! -- HEADER -->
+        <header class="header-nav">
+            <div class="for-div-head">
+                <div>
+                    <a href="/"><img class="img" src="{% static 'img/logo.png'%}" alt="HyperX"></a>
+                </div>
+            </div>
+            <ul class="box-navbar text-d">
+                <li class=""><a class="text-d font-size-nav a-color" href="/" alt="#">Главная</a></li>
+                <li><a class="text-d font-size-nav a-color" href="{% url 'shop' %}" alt="#">Каталог</a></li>
+                <li class=""><a class="text-d font-size-nav a-color" href="#" alt="#">Платформы</a></li>
+                <li><a class="text-d font-size-nav a-color" href="{% url 'shop' %}" alt="#">Форум</a></li>
+            </ul>
+            <form action="{% url 'search' %}" method="get" class="for-form-nav ">
+                <input type="search" type="text" name="q" class="form-input" placeholder="Поиск товаров" aria-label="Поиск">
+                <button class="button-nav" type="submit">Поиск</button>
+            </form>
+        </header>
+<! -- БЛОК С КОНТЕНТОМ -->
+{% block container %}
+{% endblock container %}
 
 
-
-    <footer class="footer-bg-color ">
-      <div class="div-footer">
-            <table class="footer-table">
-                <thead>
-                    <tbody>
-                        <tr>
-                            <th class="footer-link">Мы работаем с 10:00 до 18:00</th>
-                        </tr>
-                        <tr>
-                            <th class="footer-link">Наш номер:87014141414</th>
-                        </tr>
-                    </tbody>
-                </thead>
-            </table>
-            <div class="footer-tabel"><img class="footer-img" src="{% static 'img/logo.png'%}" alt="#"></div>
-      </div>
-    </footer>
-  </div>
+<! -- FOOTER -->
+        <footer class="footer-bg-color ">
+            <div class="div-footer">
+                <table style="margin-left: 30px;" class="footer-table">
+                    <thead>
+                        <tbody>
+                            <tr>
+                                <th class="footer-link">Мы работаем с 10:00 до 18:00</th>
+                                <th class="footer-link" >Наш номер: <a class="text-d" style="color: white;" href="tel:87014141414">87014141414</a></th>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+                <div class="footer-tabel">
+                    <img class="footer-img" src="{% static 'img/logo.png'%}" alt="#">
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
 

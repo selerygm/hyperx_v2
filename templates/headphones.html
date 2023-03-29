@@ -17,7 +17,7 @@
                     <div class="">
                         <div class="str2-box-blok2">
                             <img class="blok2-img" src="{{ post.img.url }}" alt="garnit">
-                            <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="#" alt="Техника">{{ post.name }}</a></h3></div>
+                            <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="{{ post.get_absolute_url }}" alt="Техника">{{ post.name }}</a></h3></div>
                         </div>
                     </div>
                 {% endif %}

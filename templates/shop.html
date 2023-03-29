@@ -1,27 +1,33 @@
 {% extends 'base-page.html' %}
 {% load static %}
-{% block title %}
-    Hyperxstore
-{% endblock title%}
+{% block title %} Каталог {% endblock title%}
 {% block container %}
-<div class="str2-border"><h1>HyperX</h1></div>
-    <div class="section">
-{% include 'categories.html' %}
+
+<! -- ЗАГОЛОВОК -->
+<div class="str2-border">
+    <h1>HyperX</h1>
+</div>
+<! -- МАГАЗИН -->
+<div class="section">
+
+{% include 'categories.html' %} <! -- ИМПОРТ КАТЕГОРИЙ -->
 {% block content %}
 {% endblock content %}
-            <div class="str2-cent-block-margin">
-            <div class="str2-block-flex">
-        {% for post in pr %}
+<! -- СПИСОК ТОВАРОВ -->
+    <div class="str2-cent-block-margin">
+        <div class="str2-block-flex">
+            {% for post in pr %}
             {% if post.availability %}
-                    <div class="">
-                        <div class="str2-box-blok2">
-                            <img class="blok2-img" src="{{ post.img.url }}" alt="garnit">
-                            <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="#" alt="Техника">{{ post.name }}</a></h3></div>
-                        </div>
+                <div class="">
+                    <div class="str2-box-blok2">
+                        <img class="blok2-img" src="{{ post.img.url }}" alt="garnit">
+                        <div><h3 class="box-h3-blok3"><a class="text-d font-size-nav a-color" href="{{ post.get_absolute_url }}" alt="Техника">{{ post.name }}</a></h3></div>
                     </div>
-                {% endif %}
-                {% endfor %}
-                        </div>
-                    </div>
+                </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
+</div>
+
 {% endblock container %}

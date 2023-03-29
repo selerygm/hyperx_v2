@@ -14,8 +14,8 @@ urlpatterns = [
     path('shop/monitors/', monitors, name='monitors'),
     path('shop/microphones/', microphones, name='microphones'),
     path('shop/keyboards/', keyboards, name='keyboards'),
-    path('shop/<int:product_id>/', show_product, name='prod'),
-
+    path('shop/<int:product_id>/', show_product, name='products'),
+    path('search/', search.as_view(), name='search'),
     # admin
     path('admin/', admin.site.urls),
 ]
